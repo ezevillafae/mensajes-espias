@@ -1,10 +1,9 @@
 package com.example.mensajesespias.infrastructure.network.rest.resource;
 
 import com.example.mensajesespias.application.network.mst.IMinimumCommunicationNetworkSpanningSearcher;
-import com.example.mensajesespias.application.network.mst.impl.MinimumCommunicationNetworkSpanningSearcher;
 import com.example.mensajesespias.application.network.save.ICommunicationNetworkSaver;
 import com.example.mensajesespias.domain.network.CommunicationNetwork;
-import com.example.mensajesespias.domain.network.mst.MinimumCommunicationNetworkSpanningSolverFactory;
+import com.example.mensajesespias.domain.network.mst.MinimumCommunicationNetworkSpanningSearcherFactory;
 import com.example.mensajesespias.infrastructure.network.rest.mapper.CreateCommunicationNetworkMapper;
 import com.example.mensajesespias.infrastructure.network.rest.request.CommunicationNetworkRequest;
 import com.example.mensajesespias.infrastructure.network.rest.response.CommunicationNetworkResponse;
@@ -28,7 +27,7 @@ public class CommunicationNetworkResource {
   private final ICommunicationNetworkSaver communicationNetworkSaver;
   private final CreateCommunicationNetworkMapper createCommunicationNetworkMapper;
 
-  private final MinimumCommunicationNetworkSpanningSolverFactory minimumCommunicationNetworkSpanningSolverFactory;
+  private final MinimumCommunicationNetworkSpanningSearcherFactory minimumCommunicationNetworkSpanningSearcherFactory;
 
   @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<CommunicationNetworkResponse> save(
@@ -45,7 +44,7 @@ public class CommunicationNetworkResource {
   public ResponseEntity<CommunicationNetworkResponse> mst(@PathVariable Long id,
       @RequestParam String algorithm) {
     IMinimumCommunicationNetworkSpanningSearcher searcher =
-        minimumCommunicationNetworkSpanningSolverFactory.getMinimumCommunicationNetworkSpanningSolver(algorithm);
+        minimumCommunicationNetworkSpanningSearcherFactory.getMinimumCommunicationNetworkSpanningSolver(algorithm);
 
     CommunicationNetwork solvedNetwork = searcher.search(id);
 

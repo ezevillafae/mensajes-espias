@@ -7,11 +7,11 @@ import com.example.mensajesespias.domain.network.mst.impl.kruskal.KruskalMinimum
 import com.example.mensajesespias.domain.network.mst.impl.prim.PrimMinimumCommunicationNetworkSpanningSolver;
 
 
-public final class MinimumCommunicationNetworkSpanningSolverFactory {
+public final class MinimumCommunicationNetworkSpanningSearcherFactory {
 
   private final ICommunicationNetworkFinder communicationNetworkFinder;
 
-  public MinimumCommunicationNetworkSpanningSolverFactory(
+  public MinimumCommunicationNetworkSpanningSearcherFactory(
       ICommunicationNetworkFinder communicationNetworkFinder) {
     this.communicationNetworkFinder = communicationNetworkFinder;
   }

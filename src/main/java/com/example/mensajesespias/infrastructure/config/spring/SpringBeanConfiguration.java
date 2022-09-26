@@ -5,7 +5,7 @@ import com.example.mensajesespias.application.network.find.impl.CommunicationNet
 import com.example.mensajesespias.application.network.save.ICommunicationNetworkSaver;
 import com.example.mensajesespias.application.network.save.impl.CommunicationNetworkSaver;
 import com.example.mensajesespias.domain.network.ICommunicationNetworkRepository;
-import com.example.mensajesespias.domain.network.mst.MinimumCommunicationNetworkSpanningSolverFactory;
+import com.example.mensajesespias.domain.network.mst.MinimumCommunicationNetworkSpanningSearcherFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -25,8 +25,8 @@ public class SpringBeanConfiguration {
   }
 
   @Bean
-  public MinimumCommunicationNetworkSpanningSolverFactory solverFactory(ICommunicationNetworkFinder communicationNetworkFinder) {
-    return new MinimumCommunicationNetworkSpanningSolverFactory(communicationNetworkFinder);
+  public MinimumCommunicationNetworkSpanningSearcherFactory solverFactory(ICommunicationNetworkFinder communicationNetworkFinder) {
+    return new MinimumCommunicationNetworkSpanningSearcherFactory(communicationNetworkFinder);
   }
 
 }
