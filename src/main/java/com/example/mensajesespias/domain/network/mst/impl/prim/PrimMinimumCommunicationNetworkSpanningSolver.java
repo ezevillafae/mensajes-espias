@@ -9,12 +9,12 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-public final class PrimIMinimumCommunicationNetworkSpanningSolver implements
+public final class PrimMinimumCommunicationNetworkSpanningSolver implements
 		IMinimumCommunicationNetworkSpanningSolver {
 	private Set<Spy> spies;
 	private Set<Communication> communications;
 
-	public PrimIMinimumCommunicationNetworkSpanningSolver() {
+	public PrimMinimumCommunicationNetworkSpanningSolver() {
 		this.spies = new HashSet<>();
 		this.communications = new HashSet<>();
 	}

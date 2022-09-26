@@ -1,10 +1,10 @@
 package com.example.mensajesespias.domain.network;
 
-import ar.edu.ungs.communications.domain.Communication;
-import ar.edu.ungs.communications.domain.CommunicationMother;
-import ar.edu.ungs.communications.domain.ProbabilityMother;
-import ar.edu.ungs.spies.domain.Spy;
-import ar.edu.ungs.spies.domain.SpyMother;
+import com.example.mensajesespias.domain.communication.Communication;
+import com.example.mensajesespias.domain.communication.CommunicationMother;
+import com.example.mensajesespias.domain.communication.ProbabilityMother;
+import com.example.mensajesespias.domain.spy.Spy;
+import com.example.mensajesespias.domain.spy.SpyMother;
 import java.util.Set;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

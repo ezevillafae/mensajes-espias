@@ -1,6 +1,6 @@
 package com.example.mensajesespias.domain.communication;
 
-import ar.edu.ungs.domain.DoubleMother;
+import com.example.mensajesespias.common.DoubleMother;
 
 public final class ProbabilityMother {
 	public static Probability random() {

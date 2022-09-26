@@ -1,6 +1,6 @@
 package com.example.mensajesespias.domain.spy;
 
-import ar.edu.ungs.domain.WordMother;
+import com.example.mensajesespias.common.WordMother;
 import java.util.Set;
 
 public final class SpyMother {

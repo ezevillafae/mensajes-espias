@@ -1,4 +1,4 @@
-package com.example.mensajesespias.infrastructure.communication.rest;
+package com.example.mensajesespias.infrastructure.communication.rest.request;
 
 import java.util.Objects;
 

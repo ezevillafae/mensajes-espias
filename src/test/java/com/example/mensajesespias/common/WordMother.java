@@ -1,4 +1,4 @@
-package ar.edu.ungs.domain;
+package com.example.mensajesespias.common;
 
 import com.github.javafaker.Faker;
 

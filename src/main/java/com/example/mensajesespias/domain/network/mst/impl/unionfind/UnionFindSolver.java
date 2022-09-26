@@ -1,6 +1,6 @@
 package com.example.mensajesespias.domain.network.mst.impl.unionfind;
 
-import ar.edu.ungs.communications.domain.Communication;
+import com.example.mensajesespias.domain.communication.Communication;
 
 public final class UnionFindSolver {
     private final Integer[] parents;

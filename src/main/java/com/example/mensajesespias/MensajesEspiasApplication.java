@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MensajesEspiasApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MensajesEspiasApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(MensajesEspiasApplication.class, args);
+  }
 
 }

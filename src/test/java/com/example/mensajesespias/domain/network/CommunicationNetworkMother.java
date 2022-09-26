@@ -1,9 +1,10 @@
 package com.example.mensajesespias.domain.network;
 
-import ar.edu.ungs.communications.domain.Communication;
-import ar.edu.ungs.communications.domain.ProbabilityMother;
-import ar.edu.ungs.spies.domain.Spy;
-import ar.edu.ungs.spies.domain.SpyMother;
+
+import com.example.mensajesespias.domain.communication.Communication;
+import com.example.mensajesespias.domain.communication.ProbabilityMother;
+import com.example.mensajesespias.domain.spy.Spy;
+import com.example.mensajesespias.domain.spy.SpyMother;
 
 public final class CommunicationNetworkMother {
 	public static CommunicationNetwork preset() {

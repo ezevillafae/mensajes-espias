@@ -1,19 +1,20 @@
-package com.example.mensajesespias.application.network.find;
+package com.example.mensajesespias.application.network.find.impl;
 
+import com.example.mensajesespias.application.network.find.ICommunicationNetworkFinder;
 import com.example.mensajesespias.domain.network.CommunicationNetwork;
 import com.example.mensajesespias.domain.network.CommunicationNetworkNotExists;
-import com.example.mensajesespias.domain.network.CommunicationNetworkRepository;
+import com.example.mensajesespias.domain.network.ICommunicationNetworkRepository;
 
 public class CommunicationNetworkFinder implements ICommunicationNetworkFinder {
 
-  private final CommunicationNetworkRepository communicationNetworkRepository;
+  private final ICommunicationNetworkRepository ICommunicationNetworkRepository;
 
-  public CommunicationNetworkFinder(CommunicationNetworkRepository communicationNetworkRepository) {
-    this.communicationNetworkRepository = communicationNetworkRepository;
+  public CommunicationNetworkFinder(ICommunicationNetworkRepository ICommunicationNetworkRepository) {
+    this.ICommunicationNetworkRepository = ICommunicationNetworkRepository;
   }
 
   @Override
-  public CommunicationNetwork find() {
-    return communicationNetworkRepository.find().orElseThrow(CommunicationNetworkNotExists::new);
+  public CommunicationNetwork find(Long id) {
+    return ICommunicationNetworkRepository.find(id).orElseThrow(CommunicationNetworkNotExists::new);
   }
 }

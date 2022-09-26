@@ -1,7 +1,6 @@
-package ar.edu.ungs.communications.domain;
+package com.example.mensajesespias.domain.communication;
 
-import ar.edu.ungs.spies.domain.Spy;
-
+import com.example.mensajesespias.domain.spy.Spy;
 import java.util.Objects;
 
 public final class Communication implements Comparable<Communication>{

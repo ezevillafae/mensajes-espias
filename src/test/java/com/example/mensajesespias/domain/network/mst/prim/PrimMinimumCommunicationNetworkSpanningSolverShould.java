@@ -1,4 +1,4 @@
-package com.example.mensajesespias.domain.network.mst;
+package com.example.mensajesespias.domain.network.mst.prim;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

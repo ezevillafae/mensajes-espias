@@ -7,7 +7,7 @@ import com.example.mensajesespias.domain.network.mst.impl.unionfind.UnionFindSol
 import java.util.List;
 import java.util.stream.Collectors;
 
-public final class KruskalIMinimumCommunicationNetworkSpanningSolver implements
+public final class KruskalMinimumCommunicationNetworkSpanningSolver implements
 		IMinimumCommunicationNetworkSpanningSolver {
 	@Override
 	public CommunicationNetwork solve(CommunicationNetwork network) {

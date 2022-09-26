@@ -1,7 +1,10 @@
 package com.example.mensajesespias.domain.network.mst.kruskal;
 
-import ar.edu.ungs.networks.domain.CommunicationNetwork;
-import ar.edu.ungs.networks.domain.CommunicationNetworkMother;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import com.example.mensajesespias.domain.network.CommunicationNetwork;
+import com.example.mensajesespias.domain.network.CommunicationNetworkMother;
+import com.example.mensajesespias.domain.network.mst.impl.kruskal.KruskalMinimumCommunicationNetworkSpanningSolver;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

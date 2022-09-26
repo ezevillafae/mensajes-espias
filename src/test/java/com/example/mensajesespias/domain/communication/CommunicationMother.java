@@ -1,6 +1,6 @@
 package com.example.mensajesespias.domain.communication;
 
-import ar.edu.ungs.spies.domain.Spy;
+import com.example.mensajesespias.domain.spy.Spy;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;

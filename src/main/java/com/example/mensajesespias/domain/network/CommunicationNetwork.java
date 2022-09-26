@@ -1,10 +1,17 @@
-package ar.edu.ungs.networks.domain;
+package com.example.mensajesespias.domain.network;
 
-import ar.edu.ungs.spies.domain.Spy;
-import ar.edu.ungs.communications.domain.Communication;
-import ar.edu.ungs.communications.domain.Probability;
-
-import java.util.*;
+import com.example.mensajesespias.domain.communication.Communication;
+import com.example.mensajesespias.domain.communication.Probability;
+import com.example.mensajesespias.domain.spy.Spy;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public final class CommunicationNetwork {
@@ -59,7 +66,7 @@ public final class CommunicationNetwork {
 	}
 
 	public Set<Communication> communications() {
-		Set<Communication> communications = new TreeSet<>();
+		List<Communication> communications = new ArrayList<>();
 
 		for (int i = 0; i < this.probabilities.length; i++) {
 			for (int j = 0; j < this.probabilities[i].length; j++) {
@@ -67,12 +74,14 @@ public final class CommunicationNetwork {
 
 				if (probability.isPresent()) {
 					Communication possibleCommunication = new Communication(this.spies.get(i), this.spies.get(j), probability.get());
-					communications.add(possibleCommunication);
+					if(!communications.contains(possibleCommunication)) {
+						communications.add(possibleCommunication);
+					}
 				}
 			}
 		}
 
-		return communications;
+		return new HashSet<>(communications);
 	}
 
 	private boolean exists(Spy firstSpy, Spy secondSpy) {

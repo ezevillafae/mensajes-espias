@@ -1,4 +1,4 @@
-package ar.edu.ungs.communications.domain;
+package com.example.mensajesespias.domain.communication;
 
 import java.util.Objects;
 
