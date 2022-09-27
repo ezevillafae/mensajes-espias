@@ -11,9 +11,7 @@ public final class KruskalMinimumCommunicationNetworkSpanningSolver implements
 		IMinimumCommunicationNetworkSpanningSolver {
 	@Override
 	public CommunicationNetwork solve(CommunicationNetwork network) {
-		List<Communication> communications = network.communications().stream()
-		                                            .sorted(Communication::compareProbability)
-		                                            .collect(Collectors.toList());
+		List<Communication> communications = sortNetwork(network);
 		int totalSpies = network.size();
 		UnionFindSolver unionFindSolver = new UnionFindSolver(totalSpies);
 		int communicationCount = 0;
@@ -34,5 +32,11 @@ public final class KruskalMinimumCommunicationNetworkSpanningSolver implements
 		}
 
 		return minimumSpanningCommunicationNetwork;
+	}
+
+	private List<Communication> sortNetwork(CommunicationNetwork network) {
+		return network.communications().stream()
+				.sorted(Communication::compareProbability)
+				.collect(Collectors.toList());
 	}
 }

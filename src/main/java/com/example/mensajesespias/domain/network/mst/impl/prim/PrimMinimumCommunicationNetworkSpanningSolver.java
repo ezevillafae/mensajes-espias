@@ -53,14 +53,20 @@ public final class PrimMinimumCommunicationNetworkSpanningSolver implements
 			for (Spy neighbour : neighbours) {
 				Optional<Probability> probability = network.probability(spy, neighbour);
 
-				if (probability.isPresent() && isOnlyOneVisitedSpy(spy, neighbour)) {
-					Communication communication = new Communication(spy, neighbour, probability.get());
-					communicationsWhereOnlyOneVisitedSpy.add(communication);
-				}
+				probability.ifPresent(
+						value -> addIfOnlyOneVisitedSpy(communicationsWhereOnlyOneVisitedSpy, spy, neighbour, value));
 			}
 		}
 
 		return communicationsWhereOnlyOneVisitedSpy;
+	}
+
+	private void addIfOnlyOneVisitedSpy(Set<Communication> communicationsWhereOnlyOneVisitedSpy, Spy spy,
+			Spy neighbour, Probability probability) {
+		if (isOnlyOneVisitedSpy(spy, neighbour)) {
+			Communication communication = new Communication(spy, neighbour, probability);
+			communicationsWhereOnlyOneVisitedSpy.add(communication);
+		}
 	}
 
 	private boolean isOnlyOneVisitedSpy(Spy spy, Spy neighbour) {

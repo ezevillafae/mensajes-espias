@@ -57,12 +57,17 @@ public final class CommunicationNetwork {
 		Set<Spy> result = new HashSet<>();
 		for (int neighbourId = 0; neighbourId < this.probabilities.length; ++neighbourId) {
 			Spy possibleNeighbour = this.spies.get(neighbourId);
-			if (possibleNeighbour != null && neighbourId != spy.id() && this.exists(spy, possibleNeighbour)) {
+			if (areNeighbours(spy, neighbourId, possibleNeighbour)) {
 				result.add(possibleNeighbour);
 			}
 		}
 
 		return result;
+	}
+
+	private boolean areNeighbours(Spy spy, int neighbourId, Spy possibleNeighbour) {
+		return possibleNeighbour != null && neighbourId != spy.id() && this.exists(spy,
+				possibleNeighbour);
 	}
 
 	public Set<Communication> communications() {
